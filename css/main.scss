@@ -1,0 +1,186 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    font-size: 62.5%;
+}
+
+html{
+    font-size: 1.6rem;
+}
+
+body{
+    background-color: #251749;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.container{
+    position: relative;
+    background-color: #495579;
+    padding: 3.2rem;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.6rem;
+
+    border-radius: .8rem;
+    box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.34);
+
+    h2{
+        color: #FFFBEB;
+        font-size: 3.2rem;
+        text-transform: uppercase;
+    }
+
+    .slider_main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .slider {
+            -webkit-appearance: none;
+            background: #FFFBEB;
+            outline: none;
+            width: 100%;
+            height: 11px;
+            border-radius: 9px;
+        }  
+    }
+
+    button{
+        background-color: #251749;
+        width: 100%;
+        padding: .8rem;
+        font-size: 1.6rem;
+        color: #FFFBEB;
+        border: none;
+        cursor: pointer;
+        border-radius: .8rem;
+        box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.34);
+        text-transform: uppercase;
+
+        transition: all 300ms;
+
+        &:hover{
+            box-shadow: none;
+        }
+
+    }
+
+    label{
+        position: relative;
+        font-size: 1.2rem;
+        font-weight: 200;
+        color: #FFFBEB;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        
+        transition: all 300ms;
+
+        &:hover{
+            text-decoration: underline;
+            .checkmark{
+                background-color: #251749;
+            }
+        }
+
+        .checkmark{
+            position: absolute;
+            top: -1px;
+            right: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #263159;
+            border-radius: 4px;
+        }
+
+    }
+
+    .output{
+        display: flex;
+        flex-direction: column;
+        gap: .8rem;
+        h5{
+            padding: .8rem;
+            font-size: 1.2rem;
+            color: #FFFBEB;
+            background-color: #263159;
+            border-radius: .8rem;
+            font-weight: 200;
+        }
+
+        .clipboard{
+            font-size: 1.2rem;
+            font-weight: 200;
+            text-transform: none;
+        }
+    }
+
+
+    .txt-copiado{
+        font-size: 1.2rem;
+        color: #FFFBEB;
+        font-weight: 200;
+
+
+        position: absolute;
+        bottom: .8rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%; 
+
+    background: #251749;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%; 
+
+    background: #251749;
+    cursor: pointer;
+}
+
+label input:checked ~ .checkmark{
+    background-color: #251749;
+}
+
+label .checkmark::after{
+    content: "";
+    position: absolute;
+    display: none;
+    left: 8px;
+    top: 3px;
+    width: 3px;
+    height: 8px;
+    border: solid #FFFBEB;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+label input:checked ~ .checkmark::after{
+    display: block;
+}
